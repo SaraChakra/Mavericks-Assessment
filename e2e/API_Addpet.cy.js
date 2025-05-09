@@ -3,19 +3,19 @@ describe('APIValidation', () => {
          let requestBody = {
 
             
-            "id": 1114,
+            "id": 2217,
                 "category": {
-                "id": 1114,
-                    "name": "happy"
+                "id": 2217,
+                    "name": "shiv"
             },
-            "name": "happy",
+            "name": "shiv",
                 "photoUrls": [
                     "string"
                 ],
                     "tags": [
                         {
-                            "id": 1114,
-                            "name": "happy"
+                            "id": 2217,
+                            "name": "shiv"
                         }
                     ],
                         "status": "available" 
@@ -41,19 +41,20 @@ describe('APIValidation', () => {
             })
     })
 
-    it('Petsearch', ()=> {
+    it('Petsearch', () => {
+        cy.wait(1000);
         cy.request(
             {
                 method: 'GET',
-                url: 'https://petstore.swagger.io/v2/pet/1114',
+                url: 'https://petstore.swagger.io/v2/pet/2217',
                 api_key: 'special-key'
             }
         )
                 .then((response) => {
                 expect(response.status).to.eq(200)
                 expect(response.body.status).to.eq('available'), 
-                    expect(response.body.id).to.eq(1114),      
-                    expect(response.body.name).to.eq('happy')       
+                    expect(response.body.id).to.eq(2217),      
+                    expect(response.body.name).to.eq('shiv')           
             })
-    })
+    }) 
 })
