@@ -12,7 +12,7 @@ POM file location: cypress-> e2e-> Page Object -> 1.Logindata.js (POM for Login.
 Fixture file location: cypress-> fixtures-> 1. Cart.json 
 (Add to Cart UI functionality: Name, Country and City fields in Place Order pop-up screen)
 
-Critical data are stored in 'Cypress.env.json' for Login and Add to Cart UI functionalities, PFB the file format
+Critical data are stored in 'Cypress.env.json' (which is independent for every machine) for Login and Add to Cart UI functionalities, Please add this file with below format
 
 {       "successusername": "",      \\ to check the positive flow 
         "successpassword": "",      \\ to check the positive flow
