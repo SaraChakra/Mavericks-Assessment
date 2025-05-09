@@ -3,19 +3,19 @@ describe('APIValidation', () => {
          let requestBody = {
 
             
-            "id": 2212,
+            "id": 1114,
                 "category": {
-                "id": 2212,
-                    "name": "string"
+                "id": 1114,
+                    "name": "happy"
             },
-            "name": "genie",
+            "name": "happy",
                 "photoUrls": [
                     "string"
                 ],
                     "tags": [
                         {
-                            "id": 2212,
-                            "name": "string"
+                            "id": 1114,
+                            "name": "happy"
                         }
                     ],
                         "status": "available" 
@@ -34,9 +34,9 @@ describe('APIValidation', () => {
         )
             .then((response) => {
                 expect(response.status).to.eq(200)
-                expect(response.body.status).to.eq('available'),
-                    expect(response.body.id).to.eq(2212),
-                    expect(response.body.name).to.eq('genie')
+                expect(response.body.status).to.eq(requestBody.status),
+                    expect(response.body.id).to.eq(requestBody.id),
+                    expect(response.body.name).to.eq(requestBody.name)
 
             })
     })
@@ -45,15 +45,15 @@ describe('APIValidation', () => {
         cy.request(
             {
                 method: 'GET',
-                url: 'https://petstore.swagger.io/v2/pet/2212',
+                url: 'https://petstore.swagger.io/v2/pet/1114',
                 api_key: 'special-key'
             }
         )
-            .then((response) => {
+                .then((response) => {
                 expect(response.status).to.eq(200)
-                expect(response.body.status).to.eq('available'),
-                    expect(response.body.id).to.eq(2212),  
-                    expect(response.body.name).to.eq('baaaa')
+                expect(response.body.status).to.eq('available'), 
+                    expect(response.body.id).to.eq(1114),      
+                    expect(response.body.name).to.eq('happy')       
             })
     })
 })

@@ -25,7 +25,20 @@
 //koi90l-p Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
+
 Cypress.Commands.add('linkselection', (label) => {
     cy.get('a').contains(label).click();
 
 })
+
+const baseUrl = "https://www.demoblaze.com/"; 
+
+Cypress.Commands.add("visitBase", (path = "/") => {
+  cy.visit(`${baseUrl}${path}`);
+});
+
+Cypress.Commands.add("takeScreenshot", (name = "screenshot") => {
+  cy.screenshot(name); 
+});
+
+
