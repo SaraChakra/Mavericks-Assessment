@@ -45,7 +45,7 @@ describe('APIValidation', () => {
         cy.wait(1000);
         cy.request(
             {
-                method: 'GET',
+                method: 'GET', 
                 url: 'https://petstore.swagger.io/v2/pet/2217',
                 api_key: 'special-key'
             }
